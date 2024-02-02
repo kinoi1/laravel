@@ -21,4 +21,4 @@
 {{-- <script src="{{ asset('AdminLTE/dist/js/demo.js') }}"></script> --}}
 <!-- Page specific script -->
 <!-- User Javascript -->
-<script src="{{ asset('backend/js/js/user.js') }}"></script>
+<script src="{{ asset('backend/js/user.js') }}"></script>

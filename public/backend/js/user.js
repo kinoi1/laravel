@@ -2,6 +2,7 @@
 host = window.location.origin + '/';
 url  = window.location.href;
 url_list = host + 'user/list_data';
+token = document.getElementById('crsf-token').dataset.token;
 
 
    
@@ -12,7 +13,12 @@ url_list = host + 'user/list_data';
 //     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 // });
 // data_post = '';
-$(document).ready(function(){
+$(function(){
+    console.log(url_list);
+    data_post = {
+        StartDate : '2024-01-01',
+        EndDate   : '2024-01-31'
+    }
     table = $('#table').DataTable({
         "pageLength": 25,
         "destroy": true,
@@ -24,9 +30,12 @@ $(document).ready(function(){
             url: url_list,
             type: "POST",
             data: data_post,
+            headers: {'X-CSRF-TOKEN':token },
             error: function (jqXHR, textStatus, errorThrown) {
                 // Do something here
                 console.log(jqXHR.responseText);
+                console.log(errorThrown);
+                console.log(textStatus);
             }
         },
         "columnDefs": [

@@ -23,3 +23,4 @@ use App\Http\Controllers\User;
 Route::get('/',[Main::class,'dashboard']);
 Route::get('/dashboard',[Main::class,'dashboard_test']);
 Route::get('/user',[User::class,'index']);
+Route::post('/user/list_data',[User::class,'list_data']);

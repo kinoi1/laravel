@@ -35,6 +35,19 @@ class User extends Controller
 
     public function list_data(){
         // $data = Db::table('users')->get();
-        
+        $row[] = 1;
+        $row[] = 'Tes';
+        $row[] = 'tes';
+
+        $data[] = $row;
+
+
+        $output = array(
+            "recordsTotal" => 1,
+			"recordsFiltered" => 1,
+			"data" => $data,
+        );
+
+        echo json_encode($output);
     }
 }

@@ -12,6 +12,7 @@
   @endif;
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+  <div id="crsf-token" data-token="{{ csrf_token()}}"></div>
 <div class="wrapper">
 
  {{ view($navbar) }}
